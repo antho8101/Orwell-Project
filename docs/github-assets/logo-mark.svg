@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Orwell Project mark">
+  <rect width="512" height="512" fill="#0C2348"/>
+  <g fill="none" stroke="#E6D7A8" stroke-width="14">
+    <circle cx="256" cy="256" r="200"/>
+    <ellipse cx="256" cy="256" rx="110" ry="70"/>
+  </g>
+  <circle cx="256" cy="256" r="36" fill="#E6D7A8"/>
+  <g fill="#E6D7A8">
+    <circle cx="256" cy="56" r="14"/>
+    <circle cx="353" cy="82" r="14"/>
+    <circle cx="424" cy="154" r="14"/>
+    <circle cx="456" cy="256" r="14"/>
+    <circle cx="424" cy="358" r="14"/>
+    <circle cx="353" cy="430" r="14"/>
+    <circle cx="256" cy="456" r="14"/>
+    <circle cx="159" cy="430" r="14"/>
+    <circle cx="88" cy="358" r="14"/>
+    <circle cx="56" cy="256" r="14"/>
+    <circle cx="88" cy="154" r="14"/>
+    <circle cx="159" cy="82" r="14"/>
+  </g>
+</svg>

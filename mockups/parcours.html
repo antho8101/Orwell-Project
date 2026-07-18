@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orwell Project — Parcours utilisateur (mockup)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="parcours.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <aside class="rail">
+      <a class="rail__brand" href="../index.html">
+        <span class="mark" aria-hidden="true"></span>
+        Orwell Project
+      </a>
+      <p class="rail__label">Prototype cliquable</p>
+      <p class="rail__hint">Clique les boutons dans le téléphone, ou saute une étape ici.</p>
+      <ol class="steps" id="steps">
+        <li><button type="button" data-go="splash" class="is-active">01 · Arrivée</button></li>
+        <li><button type="button" data-go="identity">02 · Identité</button></li>
+        <li><button type="button" data-go="recovery">03 · Phrase de secours</button></li>
+        <li><button type="button" data-go="survival">04 · Survie</button></li>
+        <li><button type="button" data-go="inbox">05 · Boîte vide</button></li>
+        <li><button type="button" data-go="invite">06 · Laissez-passer</button></li>
+        <li><button type="button" data-go="accept">07 · Acceptation (Bob)</button></li>
+        <li><button type="button" data-go="chat">08 · Conversation</button></li>
+        <li><button type="button" data-go="ephemeral">09 · Éphémère</button></li>
+        <li><button type="button" data-go="dms">10 · Dead man’s switch</button></li>
+        <li><button type="button" data-go="wiped">11 · Après wipe</button></li>
+        <li><button type="button" data-go="square">12 · Place publique</button></li>
+      </ol>
+      <p class="rail__note">
+        Décisions figées pour ce mockup :<br />
+        éphémère à la lecture · DM sur invitation · lecture seule OK sur la Place.
+      </p>
+    </aside>
+
+    <main class="stage">
+      <header class="stage__bar">
+        <div>
+          <p class="eyebrow">App Courrier · modèle B</p>
+          <h1 id="screen-title">Arrivée</h1>
+        </div>
+        <p class="stage__meta" id="screen-meta">Création d’identité locale — aucun compte central.</p>
+      </header>
+
+      <div class="phone-wrap">
+        <div class="phone" id="phone">
+          <!-- 01 Splash -->
+          <section class="screen is-active" data-screen="splash" aria-label="Arrivée">
+            <div class="screen__body screen__body--center">
+              <div class="mark mark--lg" aria-hidden="true"></div>
+              <h2 class="display">Courrier</h2>
+              <p class="stamp">No servers. No masters. No chains.</p>
+              <p class="muted">Messagerie privée du Orwell Project. Identité sur ton appareil uniquement.</p>
+              <button type="button" class="btn btn--navy" data-go="identity">Créer une identité</button>
+              <button type="button" class="btn btn--ghost" data-go="square">Voir la Place publique</button>
+            </div>
+          </section>
+
+          <!-- 02 Identity -->
+          <section class="screen" data-screen="identity" aria-label="Identité">
+            <header class="topbar">
+              <span>Nouvelle identité</span>
+            </header>
+            <div class="screen__body">
+              <p class="lead">Pas d’email. Pas de téléphone. Une paire de clés générée ici.</p>
+              <div class="card card--keys">
+                <p class="card__label">Empreinte publique</p>
+                <code>ORW-7F3A · 9C21 · B804 · E11D</code>
+                <p class="card__hint">Générée localement · jamais envoyée en clair</p>
+              </div>
+              <label class="field">
+                <span>Pseudonyme local (optionnel)</span>
+                <input type="text" value="Camarade A" readonly />
+              </label>
+              <button type="button" class="btn btn--navy btn--block" data-go="recovery">
+                Générer ma phrase de secours
+              </button>
+            </div>
+          </section>
+
+          <!-- 03 Recovery -->
+          <section class="screen" data-screen="recovery" aria-label="Phrase de secours">
+            <header class="topbar">
+              <button type="button" class="linkish" data-go="identity">← Retour</button>
+              <span>Phrase de secours</span>
+            </header>
+            <div class="screen__body">
+              <p class="lead">Note-la hors ligne. C’est la seule façon de récupérer ton identité.</p>
+              <ol class="words">
+                <li>lantern</li>
+                <li>bridge</li>
+                <li>velvet</li>
+                <li>circuit</li>
+                <li>harbor</li>
+                <li>quartz</li>
+                <li>mirror</li>
+                <li>ember</li>
+                <li>silent</li>
+                <li>copper</li>
+                <li>orchid</li>
+                <li>signal</li>
+              </ol>
+              <label class="check">
+                <input type="checkbox" checked readonly />
+                <span>Je l’ai écrite quelque part hors de cet appareil</span>
+              </label>
+              <button type="button" class="btn btn--navy btn--block" data-go="survival">Continuer</button>
+            </div>
+          </section>
+
+          <!-- 04 Survival settings -->
+          <section class="screen" data-screen="survival" aria-label="Survie">
+            <header class="topbar"><span>Réglages de survie</span></header>
+            <div class="screen__body">
+              <p class="lead">On configure la rétention avant la première conversation.</p>
+
+              <div class="card">
+                <div class="row">
+                  <div>
+                    <strong>Messages éphémères</strong>
+                    <p>Effacement des deux côtés après lecture</p>
+                  </div>
+                  <span class="switch is-on" aria-hidden="true"></span>
+                </div>
+                <div class="chips">
+                  <span class="chip">1 h</span>
+                  <span class="chip is-selected">24 h</span>
+                  <span class="chip">7 j</span>
+                  <span class="chip">Tous les 15 msg</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="row">
+                  <div>
+                    <strong>Dead man’s switch</strong>
+                    <p>Sortie de secours volontaire (saisie / contrôle)</p>
+                  </div>
+                  <span class="switch is-on" aria-hidden="true"></span>
+                </div>
+                <p class="card__hint">Raccourci : <kbd>Ctrl</kbd> ×2 → gros bouton → <kbd>Entrée</kbd> ×2</p>
+              </div>
+
+              <div class="card card--soft">
+                <strong>Coffre leurre (recommandé)</strong>
+                <p>Un second PIN ouvre une boîte vide / conversations factices.</p>
+                <button type="button" class="btn btn--sand btn--small">Configurer plus tard</button>
+              </div>
+
+              <button type="button" class="btn btn--navy btn--block" data-go="inbox">
+                Entrer dans le Courrier
+              </button>
+            </div>
+          </section>
+
+          <!-- 05 Inbox empty -->
+          <section class="screen" data-screen="inbox" aria-label="Boîte">
+            <header class="topbar topbar--split">
+              <span>Lignes privées</span>
+              <button type="button" class="icon-btn" data-go="invite" title="Nouvelle ligne">＋</button>
+            </header>
+            <div class="screen__body screen__body--center">
+              <div class="empty">
+                <div class="mark" aria-hidden="true"></div>
+                <h3>Aucune ligne</h3>
+                <p>Pas de recherche d’utilisateurs. Tu crées un laissez-passer à usage unique.</p>
+                <button type="button" class="btn btn--navy" data-go="invite">Nouvelle ligne</button>
+              </div>
+            </div>
+            <nav class="tabbar">
+              <span class="is-active">Courrier</span>
+              <button type="button" data-go="square">Place</button>
+              <span>Réglages</span>
+            </nav>
+          </section>
+
+          <!-- 06 Invite (Alice) -->
+          <section class="screen" data-screen="invite" aria-label="Laissez-passer">
+            <header class="topbar">
+              <button type="button" class="linkish" data-go="inbox">← Retour</button>
+              <span>Laissez-passer</span>
+            </header>
+            <div class="screen__body">
+              <p class="lead">Montre ce QR en face à face, ou envoie le lien par un autre canal.</p>
+              <div class="qr">
+                <div class="qr__grid" aria-hidden="true"></div>
+                <p>ONE-SHOT · 15 min</p>
+              </div>
+              <div class="card card--link">
+                <code>orwell://pass/8f3c…a91e</code>
+                <button type="button" class="btn btn--sand btn--small">Copier</button>
+              </div>
+              <p class="muted center">En attendant que Bob accepte…</p>
+              <button type="button" class="btn btn--navy btn--block" data-go="accept">
+                Simuler l’ouverture chez Bob →
+              </button>
+            </div>
+          </section>
+
+          <!-- 07 Accept (Bob) -->
+          <section class="screen" data-screen="accept" aria-label="Acceptation">
+            <header class="topbar"><span>Demande de ligne</span></header>
+            <div class="screen__body">
+              <div class="card card--alert">
+                <p class="card__label">Quelqu’un veut établir une ligne</p>
+                <h3>Camarade A</h3>
+                <p class="mono">Empreinte · ORW-7F3A · 9C21</p>
+                <p class="card__hint">Vérifie hors bande que c’est bien la bonne personne (TOFU).</p>
+              </div>
+              <ul class="bullets">
+                <li>Deux files aveugles seront créées</li>
+                <li>Le laissez-passer expirera ensuite</li>
+                <li>Aucun carnet d’adresses central</li>
+              </ul>
+              <button type="button" class="btn btn--navy btn--block" data-go="chat">
+                Accepter la ligne
+              </button>
+              <button type="button" class="btn btn--ghost btn--block" data-go="inbox">Refuser</button>
+            </div>
+          </section>
+
+          <!-- 08 Chat -->
+          <section class="screen" data-screen="chat" aria-label="Conversation">
+            <header class="topbar topbar--chat">
+              <button type="button" class="linkish" data-go="inbox">←</button>
+              <div>
+                <strong>Camarade A</strong>
+                <small>Éphémère · 24 h après lecture · 3/15</small>
+              </div>
+              <span class="pill">E2E</span>
+            </header>
+            <div class="screen__body screen__body--chat" id="chat-thread">
+              <div class="bubble bubble--in">
+                <p>Ligne établie. Les relais ne voient que des blobs.</p>
+                <time>14:02 · lu · disparaît dans 23 h</time>
+              </div>
+              <div class="bubble bubble--out">
+                <p>Reçu. On reste sur le modèle B — files rotatives.</p>
+                <time>14:03 · envoyé</time>
+              </div>
+              <div class="bubble bubble--in">
+                <p>Si ça chauffe : Dead man’s switch. Pas de détection magique en ligne.</p>
+                <time>14:04 · lu · disparaît dans 23 h</time>
+              </div>
+            </div>
+            <footer class="composer">
+              <input type="text" value="Prochaine étape : Place publique ?" readonly />
+              <button type="button" class="btn btn--navy btn--small" data-go="ephemeral">↵</button>
+            </footer>
+          </section>
+
+          <!-- 09 Ephemeral burn -->
+          <section class="screen" data-screen="ephemeral" aria-label="Éphémère">
+            <header class="topbar topbar--chat">
+              <button type="button" class="linkish" data-go="chat">←</button>
+              <div>
+                <strong>Camarade A</strong>
+                <small class="warn">Fenêtre atteinte · purge des deux côtés</small>
+              </div>
+              <span class="pill pill--warn">15/15</span>
+            </header>
+            <div class="screen__body screen__body--chat is-burning">
+              <div class="bubble bubble--ghost">Message retiré</div>
+              <div class="bubble bubble--ghost">Message retiré</div>
+              <div class="bubble bubble--ghost">Message retiré</div>
+              <div class="toast">
+                Samizdat brûlé.<br />
+                <span>Les 15 messages ont été effacés localement + signal d’effacement envoyé.</span>
+              </div>
+            </div>
+            <footer class="composer">
+              <button type="button" class="btn btn--navy btn--block" data-go="dms">
+                Simuler Dead man’s switch →
+              </button>
+            </footer>
+          </section>
+
+          <!-- 10 Dead man's switch -->
+          <section class="screen" data-screen="dms" aria-label="Dead man's switch">
+            <div class="dms">
+              <p class="dms__kicker">Ctrl ×2 détecté</p>
+              <h2 class="display">Dead man’s switch</h2>
+              <p class="dms__copy">
+                Sortie de secours. Ça n’efface pas les captures déjà faites ailleurs —
+                ça réduit le butin sur cet appareil.
+              </p>
+              <button type="button" class="dms__big" data-go="wiped" id="dms-btn">
+                VAPORISER<br /><span>les preuves locales</span>
+              </button>
+              <p class="dms__hint">Confirme avec <kbd>Entrée</kbd> ×2 — ou clique le bouton (mockup).</p>
+              <button type="button" class="btn btn--ghost" data-go="chat">Annuler</button>
+            </div>
+          </section>
+
+          <!-- 11 Wiped -->
+          <section class="screen" data-screen="wiped" aria-label="Après wipe">
+            <div class="screen__body screen__body--center">
+              <div class="stamp-block">
+                <p class="stamp">PROTECTED</p>
+                <h2 class="display">On t’a couvert.</h2>
+                <p>
+                  Big Brother a essayé de watching you.<br />
+                  Clés, conversations et brouillons locaux : partis.
+                </p>
+              </div>
+              <div class="card card--soft">
+                <strong>Coffre leurre actif</strong>
+                <p>L’appareil affiche maintenant une boîte banale. Repars de ta phrase de secours pour la vraie identité — ailleurs, plus tard.</p>
+              </div>
+              <button type="button" class="btn btn--navy" data-go="square">Voir la Place publique</button>
+              <button type="button" class="btn btn--ghost" data-go="splash">Rejouer le parcours</button>
+            </div>
+          </section>
+
+          <!-- 12 Place publique teaser -->
+          <section class="screen" data-screen="square" aria-label="Place publique">
+            <header class="topbar topbar--split">
+              <span>Place publique</span>
+              <span class="pill">Lecture seule OK</span>
+            </header>
+            <div class="screen__body screen__body--feed">
+              <article class="post">
+                <header>
+                  <strong>@signal.break</strong>
+                  <time>2 h</time>
+                </header>
+                <p>Le Ministère de la Vérité vient de “clarifier” Chat Control. Encore.</p>
+                <footer>
+                  <span>84</span>
+                  <button type="button" class="linkish" data-go="invite">Demander une ligne</button>
+                </footer>
+              </article>
+              <article class="post post--video">
+                <div class="thumb">▶ Samizdat #14 — comment lire un laissez-passer</div>
+                <header>
+                  <strong>@kinotheque</strong>
+                  <time>5 h</time>
+                </header>
+                <p>Média distribué · hash ancré · commentaires sur le feed.</p>
+              </article>
+              <article class="post">
+                <header>
+                  <strong>@no.chains</strong>
+                  <time>hier</time>
+                </header>
+                <p>Rappel : pas de vrai nom dans les messages. L’OPSEC, c’est vous.</p>
+              </article>
+            </div>
+            <nav class="tabbar">
+              <button type="button" data-go="inbox">Courrier</button>
+              <span class="is-active">Place</span>
+              <span>Réglages</span>
+            </nav>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script src="parcours.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# Dependencies / build (future)
+node_modules/
+dist/
+build/
+.cache/
+.next/
+coverage/
+
+# Large local exports
+*.psd
+*.ai
+*.fig
+!docs/github-assets/**
+
+# Private design refs (likeness / drafts — keep local)
+assets/mockup-reference.png

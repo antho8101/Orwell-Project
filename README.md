@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/github-assets/banner-readme.svg" alt="Orwell Project — Freedom is not optional" width="100%" />
+  <img src="docs/github-assets/banner-readme.png" alt="Orwell Project — Freedom is not optional" width="100%" />
 </p>
 
 <p align="center">
@@ -119,7 +119,7 @@ Full decision log: [`docs/BRAINSTORM.md`](docs/BRAINSTORM.md)
 Drop final PNGs in [`docs/github-assets/`](docs/github-assets/).  
 Dimensions and brief: [`docs/github-assets/README.md`](docs/github-assets/README.md).
 
-SVG placeholders ship today (`banner-readme.svg`, `logo-mark.svg`) so the README renders before the print-ready art is uploaded.
+Current banner / mark: `banner-readme.png`, `logo-mark.png` (sources also under `assets/`).
 
 ---
 
@@ -155,7 +155,7 @@ Candidates: GPL-3.0, AGPL-3.0, or Apache-2.0 — maintainer decides before a rea
 ---
 
 <p align="center">
-  <img src="docs/github-assets/logo-mark.svg" alt="Orwell Project mark" width="72" />
+  <img src="docs/github-assets/logo-mark.png" alt="Orwell Project" width="280" />
 </p>
 
 <p align="center"><em>Big Brother is watching. We are watching back.</em></p>

@@ -1,369 +1,493 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orwell Project — Parcours utilisateur (mockup)</title>
+    <title>Orwell Project — Courier mockup</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="parcours.css" />
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
-
-    <aside class="rail">
+    <aside class="rail" id="rail">
       <a class="rail__brand" href="../index.html">
-        <span class="mark" aria-hidden="true"></span>
-        Orwell Project
+        <img src="../assets/brand/logo-main-yellow.png" alt="Orwell Project" />
       </a>
-      <p class="rail__label">Prototype cliquable</p>
-      <p class="rail__hint">Clique les boutons dans le téléphone, ou saute une étape ici.</p>
-      <ol class="steps" id="steps">
-        <li><button type="button" data-go="splash" class="is-active">01 · Arrivée</button></li>
-        <li><button type="button" data-go="identity">02 · Identité</button></li>
-        <li><button type="button" data-go="recovery">03 · Phrase de secours</button></li>
-        <li><button type="button" data-go="survival">04 · Survie</button></li>
-        <li><button type="button" data-go="inbox">05 · Boîte vide</button></li>
-        <li><button type="button" data-go="invite">06 · Laissez-passer</button></li>
-        <li><button type="button" data-go="accept">07 · Acceptation (Bob)</button></li>
-        <li><button type="button" data-go="chat">08 · Conversation</button></li>
-        <li><button type="button" data-go="ephemeral">09 · Éphémère</button></li>
+      <p class="rail__label">Prototype scaffold</p>
+      <p class="rail__hint">Not the product. Jump steps or hide with <kbd>Alt</kbd>+<kbd>\</kbd>.</p>
+      <ol class="steps">
+        <li><button type="button" data-go="splash" class="is-active">01 · Welcome</button></li>
+        <li><button type="button" data-go="identity">02 · Papers</button></li>
+        <li><button type="button" data-go="recovery">03 · Passport</button></li>
+        <li><button type="button" data-go="settings">04 · Settings</button></li>
+        <li><button type="button" data-go="inbox">05 · Empty desk</button></li>
+        <li><button type="button" data-go="invite">06 · Safe-conduct</button></li>
+        <li><button type="button" data-go="accept">07 · Accept (Bob)</button></li>
+        <li><button type="button" data-go="chat">08 · Letters</button></li>
+        <li><button type="button" data-go="ephemeral">09 · Burn after reading</button></li>
         <li><button type="button" data-go="dms">10 · Dead man’s switch</button></li>
-        <li><button type="button" data-go="wiped">11 · Après wipe</button></li>
-        <li><button type="button" data-go="square">12 · Place publique</button></li>
+        <li><button type="button" data-go="wiped">11 · After the burn</button></li>
+        <li><button type="button" data-go="square">12 · Public Square (web)</button></li>
       </ol>
       <p class="rail__note">
-        Décisions figées pour ce mockup :<br />
-        éphémère à la lecture · DM sur invitation · lecture seule OK sur la Place.
+        <strong>Courier</strong> = desktop app<br />
+        <strong>Public Square</strong> = browser only
       </p>
     </aside>
 
     <main class="stage">
       <header class="stage__bar">
         <div>
-          <p class="eyebrow">App Courrier · modèle B</p>
-          <h1 id="screen-title">Arrivée</h1>
+          <p class="eyebrow">Courier · desktop</p>
+          <h1 id="screen-title">Welcome</h1>
         </div>
-        <p class="stage__meta" id="screen-meta">Création d’identité locale — aucun compte central.</p>
+        <p class="stage__meta" id="screen-meta">Private letters. Your papers stay on your machine.</p>
       </header>
 
-      <div class="phone-wrap">
-        <div class="phone" id="phone">
-          <!-- 01 Splash -->
-          <section class="screen is-active" data-screen="splash" aria-label="Arrivée">
-            <div class="screen__body screen__body--center">
-              <div class="mark mark--lg" aria-hidden="true"></div>
-              <h2 class="display">Courrier</h2>
-              <p class="stamp">No servers. No masters. No chains.</p>
-              <p class="muted">Messagerie privée du Orwell Project. Identité sur ton appareil uniquement.</p>
-              <button type="button" class="btn btn--navy" data-go="identity">Créer une identité</button>
-              <button type="button" class="btn btn--ghost" data-go="square">Voir la Place publique</button>
+      <div class="desktop-wrap">
+        <!-- COURIER APP -->
+        <div class="courier" id="app">
+          <aside class="nav-rail">
+            <div class="nav-rail__top">
+              <img
+                class="nav-rail__logo"
+                src="../assets/brand/eye-yellow.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="nav-rail__word">COURIER</span>
             </div>
-          </section>
-
-          <!-- 02 Identity -->
-          <section class="screen" data-screen="identity" aria-label="Identité">
-            <header class="topbar">
-              <span>Nouvelle identité</span>
-            </header>
-            <div class="screen__body">
-              <p class="lead">Pas d’email. Pas de téléphone. Une paire de clés générée ici.</p>
-              <div class="card card--keys">
-                <p class="card__label">Empreinte publique</p>
-                <code>ORW-7F3A · 9C21 · B804 · E11D</code>
-                <p class="card__hint">Générée localement · jamais envoyée en clair</p>
-              </div>
-              <label class="field">
-                <span>Pseudonyme local (optionnel)</span>
-                <input type="text" value="Camarade A" readonly />
-              </label>
-              <button type="button" class="btn btn--navy btn--block" data-go="recovery">
-                Générer ma phrase de secours
+            <nav class="nav-rail__menu" aria-label="Courier">
+              <button type="button" class="nav-item is-active" data-nav="lines" data-go="inbox">
+                <span class="nav-item__icon" aria-hidden="true">◈</span>
+                Letters
               </button>
-            </div>
-          </section>
-
-          <!-- 03 Recovery -->
-          <section class="screen" data-screen="recovery" aria-label="Phrase de secours">
-            <header class="topbar">
-              <button type="button" class="linkish" data-go="identity">← Retour</button>
-              <span>Phrase de secours</span>
-            </header>
-            <div class="screen__body">
-              <p class="lead">Note-la hors ligne. C’est la seule façon de récupérer ton identité.</p>
-              <ol class="words">
-                <li>lantern</li>
-                <li>bridge</li>
-                <li>velvet</li>
-                <li>circuit</li>
-                <li>harbor</li>
-                <li>quartz</li>
-                <li>mirror</li>
-                <li>ember</li>
-                <li>silent</li>
-                <li>copper</li>
-                <li>orchid</li>
-                <li>signal</li>
-              </ol>
-              <label class="check">
-                <input type="checkbox" checked readonly />
-                <span>Je l’ai écrite quelque part hors de cet appareil</span>
-              </label>
-              <button type="button" class="btn btn--navy btn--block" data-go="survival">Continuer</button>
-            </div>
-          </section>
-
-          <!-- 04 Survival settings -->
-          <section class="screen" data-screen="survival" aria-label="Survie">
-            <header class="topbar"><span>Réglages de survie</span></header>
-            <div class="screen__body">
-              <p class="lead">On configure la rétention avant la première conversation.</p>
-
-              <div class="card">
-                <div class="row">
-                  <div>
-                    <strong>Messages éphémères</strong>
-                    <p>Effacement des deux côtés après lecture</p>
-                  </div>
-                  <span class="switch is-on" aria-hidden="true"></span>
-                </div>
-                <div class="chips">
-                  <span class="chip">1 h</span>
-                  <span class="chip is-selected">24 h</span>
-                  <span class="chip">7 j</span>
-                  <span class="chip">Tous les 15 msg</span>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="row">
-                  <div>
-                    <strong>Dead man’s switch</strong>
-                    <p>Sortie de secours volontaire (saisie / contrôle)</p>
-                  </div>
-                  <span class="switch is-on" aria-hidden="true"></span>
-                </div>
-                <p class="card__hint">Raccourci : <kbd>Ctrl</kbd> ×2 → gros bouton → <kbd>Entrée</kbd> ×2</p>
-              </div>
-
-              <div class="card card--soft">
-                <strong>Coffre leurre (recommandé)</strong>
-                <p>Un second PIN ouvre une boîte vide / conversations factices.</p>
-                <button type="button" class="btn btn--sand btn--small">Configurer plus tard</button>
-              </div>
-
-              <button type="button" class="btn btn--navy btn--block" data-go="inbox">
-                Entrer dans le Courrier
+              <button type="button" class="nav-item" data-go="settings">
+                <span class="nav-item__icon" aria-hidden="true">◎</span>
+                Settings
               </button>
-            </div>
-          </section>
-
-          <!-- 05 Inbox empty -->
-          <section class="screen" data-screen="inbox" aria-label="Boîte">
-            <header class="topbar topbar--split">
-              <span>Lignes privées</span>
-              <button type="button" class="icon-btn" data-go="invite" title="Nouvelle ligne">＋</button>
-            </header>
-            <div class="screen__body screen__body--center">
-              <div class="empty">
-                <div class="mark" aria-hidden="true"></div>
-                <h3>Aucune ligne</h3>
-                <p>Pas de recherche d’utilisateurs. Tu crées un laissez-passer à usage unique.</p>
-                <button type="button" class="btn btn--navy" data-go="invite">Nouvelle ligne</button>
-              </div>
-            </div>
-            <nav class="tabbar">
-              <span class="is-active">Courrier</span>
-              <button type="button" data-go="square">Place</button>
-              <span>Réglages</span>
+              <button type="button" class="nav-item" data-go="identity">
+                <span class="nav-item__icon" aria-hidden="true">◉</span>
+                Papers
+              </button>
             </nav>
-          </section>
+            <div class="nav-rail__foot">
+              <button type="button" class="nav-link" data-go="square">Public Square ↗</button>
+              <p class="nav-rail__tag">No masters. No chains.</p>
+            </div>
+          </aside>
 
-          <!-- 06 Invite (Alice) -->
-          <section class="screen" data-screen="invite" aria-label="Laissez-passer">
-            <header class="topbar">
-              <button type="button" class="linkish" data-go="inbox">← Retour</button>
-              <span>Laissez-passer</span>
+          <section class="col-list" aria-label="Letters">
+            <header class="col-list__head">
+              <h2>Letters</h2>
+              <button type="button" class="icon-btn" data-go="invite" title="New letter">+</button>
             </header>
-            <div class="screen__body">
-              <p class="lead">Montre ce QR en face à face, ou envoie le lien par un autre canal.</p>
-              <div class="qr">
-                <div class="qr__grid" aria-hidden="true"></div>
-                <p>ONE-SHOT · 15 min</p>
-              </div>
-              <div class="card card--link">
-                <code>orwell://pass/8f3c…a91e</code>
-                <button type="button" class="btn btn--sand btn--small">Copier</button>
-              </div>
-              <p class="muted center">En attendant que Bob accepte…</p>
-              <button type="button" class="btn btn--navy btn--block" data-go="accept">
-                Simuler l’ouverture chez Bob →
-              </button>
+            <div class="col-list__body" id="thread-list">
+              <!-- filled / swapped per screen via data attributes in screens below as templates — static variants -->
             </div>
           </section>
 
-          <!-- 07 Accept (Bob) -->
-          <section class="screen" data-screen="accept" aria-label="Acceptation">
-            <header class="topbar"><span>Demande de ligne</span></header>
-            <div class="screen__body">
-              <div class="card card--alert">
-                <p class="card__label">Quelqu’un veut établir une ligne</p>
-                <h3>Camarade A</h3>
-                <p class="mono">Empreinte · ORW-7F3A · 9C21</p>
-                <p class="card__hint">Vérifie hors bande que c’est bien la bonne personne (TOFU).</p>
-              </div>
-              <ul class="bullets">
-                <li>Deux files aveugles seront créées</li>
-                <li>Le laissez-passer expirera ensuite</li>
-                <li>Aucun carnet d’adresses central</li>
-              </ul>
-              <button type="button" class="btn btn--navy btn--block" data-go="chat">
-                Accepter la ligne
-              </button>
-              <button type="button" class="btn btn--ghost btn--block" data-go="inbox">Refuser</button>
-            </div>
-          </section>
-
-          <!-- 08 Chat -->
-          <section class="screen" data-screen="chat" aria-label="Conversation">
-            <header class="topbar topbar--chat">
-              <button type="button" class="linkish" data-go="inbox">←</button>
-              <div>
-                <strong>Camarade A</strong>
-                <small>Éphémère · 24 h après lecture · 3/15</small>
-              </div>
-              <span class="pill">E2E</span>
-            </header>
-            <div class="screen__body screen__body--chat" id="chat-thread">
-              <div class="bubble bubble--in">
-                <p>Ligne établie. Les relais ne voient que des blobs.</p>
-                <time>14:02 · lu · disparaît dans 23 h</time>
-              </div>
-              <div class="bubble bubble--out">
-                <p>Reçu. On reste sur le modèle B — files rotatives.</p>
-                <time>14:03 · envoyé</time>
-              </div>
-              <div class="bubble bubble--in">
-                <p>Si ça chauffe : Dead man’s switch. Pas de détection magique en ligne.</p>
-                <time>14:04 · lu · disparaît dans 23 h</time>
-              </div>
-            </div>
-            <footer class="composer">
-              <input type="text" value="Prochaine étape : Place publique ?" readonly />
-              <button type="button" class="btn btn--navy btn--small" data-go="ephemeral">↵</button>
-            </footer>
-          </section>
-
-          <!-- 09 Ephemeral burn -->
-          <section class="screen" data-screen="ephemeral" aria-label="Éphémère">
-            <header class="topbar topbar--chat">
-              <button type="button" class="linkish" data-go="chat">←</button>
-              <div>
-                <strong>Camarade A</strong>
-                <small class="warn">Fenêtre atteinte · purge des deux côtés</small>
-              </div>
-              <span class="pill pill--warn">15/15</span>
-            </header>
-            <div class="screen__body screen__body--chat is-burning">
-              <div class="bubble bubble--ghost">Message retiré</div>
-              <div class="bubble bubble--ghost">Message retiré</div>
-              <div class="bubble bubble--ghost">Message retiré</div>
-              <div class="toast">
-                Samizdat brûlé.<br />
-                <span>Les 15 messages ont été effacés localement + signal d’effacement envoyé.</span>
-              </div>
-            </div>
-            <footer class="composer">
-              <button type="button" class="btn btn--navy btn--block" data-go="dms">
-                Simuler Dead man’s switch →
-              </button>
-            </footer>
-          </section>
-
-          <!-- 10 Dead man's switch -->
-          <section class="screen" data-screen="dms" aria-label="Dead man's switch">
-            <div class="dms">
-              <p class="dms__kicker">Ctrl ×2 détecté</p>
-              <h2 class="display">Dead man’s switch</h2>
-              <p class="dms__copy">
-                Sortie de secours. Ça n’efface pas les captures déjà faites ailleurs —
-                ça réduit le butin sur cet appareil.
-              </p>
-              <button type="button" class="dms__big" data-go="wiped" id="dms-btn">
-                VAPORISER<br /><span>les preuves locales</span>
-              </button>
-              <p class="dms__hint">Confirme avec <kbd>Entrée</kbd> ×2 — ou clique le bouton (mockup).</p>
-              <button type="button" class="btn btn--ghost" data-go="chat">Annuler</button>
-            </div>
-          </section>
-
-          <!-- 11 Wiped -->
-          <section class="screen" data-screen="wiped" aria-label="Après wipe">
-            <div class="screen__body screen__body--center">
-              <div class="stamp-block">
-                <p class="stamp">PROTECTED</p>
-                <h2 class="display">On t’a couvert.</h2>
-                <p>
-                  Big Brother a essayé de watching you.<br />
-                  Clés, conversations et brouillons locaux : partis.
+          <section class="col-main" id="app-main">
+            <!-- 01 Welcome -->
+            <div class="screen is-active" data-screen="splash">
+              <div class="focus-panel">
+                <img
+                  class="focus-panel__logo"
+                  src="../assets/brand/logo-main-blue.png"
+                  alt="Orwell Project"
+                />
+                <h2 class="display">Courier</h2>
+                <p class="lede">
+                  Private letters for ordinary people.<br />
+                  Your papers stay on your machine. No switchboard in the middle.
                 </p>
+                <div class="actions">
+                  <button type="button" class="btn btn--primary" data-go="identity">
+                    Get your papers
+                  </button>
+                  <button type="button" class="btn btn--ghost" data-go="square">
+                    Visit the Public Square ↗
+                  </button>
+                </div>
               </div>
-              <div class="card card--soft">
-                <strong>Coffre leurre actif</strong>
-                <p>L’appareil affiche maintenant une boîte banale. Repars de ta phrase de secours pour la vraie identité — ailleurs, plus tard.</p>
-              </div>
-              <button type="button" class="btn btn--navy" data-go="square">Voir la Place publique</button>
-              <button type="button" class="btn btn--ghost" data-go="splash">Rejouer le parcours</button>
             </div>
-          </section>
 
-          <!-- 12 Place publique teaser -->
-          <section class="screen" data-screen="square" aria-label="Place publique">
-            <header class="topbar topbar--split">
-              <span>Place publique</span>
-              <span class="pill">Lecture seule OK</span>
-            </header>
-            <div class="screen__body screen__body--feed">
-              <article class="post">
-                <header>
-                  <strong>@signal.break</strong>
-                  <time>2 h</time>
-                </header>
-                <p>Le Ministère de la Vérité vient de “clarifier” Chat Control. Encore.</p>
-                <footer>
-                  <span>84</span>
-                  <button type="button" class="linkish" data-go="invite">Demander une ligne</button>
-                </footer>
-              </article>
-              <article class="post post--video">
-                <div class="thumb">▶ Samizdat #14 — comment lire un laissez-passer</div>
-                <header>
-                  <strong>@kinotheque</strong>
-                  <time>5 h</time>
-                </header>
-                <p>Média distribué · hash ancré · commentaires sur le feed.</p>
-              </article>
-              <article class="post">
-                <header>
-                  <strong>@no.chains</strong>
-                  <time>hier</time>
-                </header>
-                <p>Rappel : pas de vrai nom dans les messages. L’OPSEC, c’est vous.</p>
-              </article>
+            <!-- 02 Papers -->
+            <div class="screen" data-screen="identity">
+              <div class="focus-panel focus-panel--form">
+                <p class="kicker">Your papers</p>
+                <h2 class="display display--sm">Issue new papers</h2>
+                <p class="lede">No telephone number. No mailing address. Just you and this desk.</p>
+                <div class="card">
+                  <p class="card__label">Your seal</p>
+                  <code>ORW-7F3A · 9C21 · B804 · E11D</code>
+                  <p class="card__hint">Kept here · how comrades recognize you</p>
+                </div>
+                <label class="field">
+                  <span>Cover name (optional)</span>
+                  <input type="text" value="Comrade A" readonly />
+                </label>
+                <button type="button" class="btn btn--primary" data-go="recovery">
+                  Make my passport
+                </button>
+              </div>
             </div>
-            <nav class="tabbar">
-              <button type="button" data-go="inbox">Courrier</button>
-              <span class="is-active">Place</span>
-              <span>Réglages</span>
-            </nav>
+
+            <!-- 03 Passport -->
+            <div class="screen" data-screen="recovery">
+              <div class="focus-panel focus-panel--form">
+                <button type="button" class="text-btn" data-go="identity">← Back</button>
+                <p class="kicker">Passport</p>
+                <h2 class="display display--sm">Write these words down</h2>
+                <p class="lede">
+                  On paper. Off this machine. Lose them, and these papers are gone for good.
+                </p>
+                <ol class="words">
+                  <li>lantern</li>
+                  <li>bridge</li>
+                  <li>velvet</li>
+                  <li>circuit</li>
+                  <li>harbor</li>
+                  <li>quartz</li>
+                  <li>mirror</li>
+                  <li>ember</li>
+                  <li>silent</li>
+                  <li>copper</li>
+                  <li>orchid</li>
+                  <li>signal</li>
+                </ol>
+                <label class="check">
+                  <input type="checkbox" checked readonly />
+                  <span>I wrote them somewhere safe — not on this machine</span>
+                </label>
+                <button type="button" class="btn btn--primary" data-go="settings">Continue</button>
+              </div>
+            </div>
+
+            <!-- 04 Settings -->
+            <div class="screen" data-screen="settings">
+              <div class="focus-panel focus-panel--form focus-panel--wide">
+                <p class="kicker">Settings</p>
+                <h2 class="display display--sm">House rules</h2>
+                <div class="settings-grid">
+                  <div class="card">
+                    <div class="row">
+                      <div>
+                        <strong>Burn after reading</strong>
+                        <p>Letters disappear for both of you</p>
+                      </div>
+                      <span class="switch is-on" aria-hidden="true"></span>
+                    </div>
+                    <div class="chips">
+                      <span class="chip">1h</span>
+                      <span class="chip is-selected">24h</span>
+                      <span class="chip">7d</span>
+                      <span class="chip">15 letters</span>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="row">
+                      <div>
+                        <strong>Dead man’s switch</strong>
+                        <p>Burn everything on this desk in a hurry</p>
+                      </div>
+                      <span class="switch is-on" aria-hidden="true"></span>
+                    </div>
+                    <p class="card__hint"><kbd>Ctrl</kbd>×2 → then <kbd>Enter</kbd>×2</p>
+                  </div>
+                  <div class="card">
+                    <strong>Cover story</strong>
+                    <p>A second code opens a harmless empty desk.</p>
+                    <button type="button" class="btn btn--soft btn--sm">Set up later</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary" data-go="inbox">Open the desk</button>
+              </div>
+            </div>
+
+            <!-- 05 Empty inbox -->
+            <div class="screen" data-screen="inbox" data-list="empty">
+              <div class="focus-panel">
+                <img
+                  class="focus-panel__mark"
+                  src="../assets/brand/eye-blue.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <h2 class="display display--sm">No letters yet</h2>
+                <p class="lede">
+                  There is no phone book here.<br />
+                  Hand someone a safe-conduct to begin.
+                </p>
+                <button type="button" class="btn btn--primary" data-go="invite">
+                  Issue a safe-conduct
+                </button>
+              </div>
+            </div>
+
+            <!-- 06 Invite -->
+            <div class="screen" data-screen="invite" data-list="invite">
+              <div class="chat-frame">
+                <header class="chat-frame__head">
+                  <div>
+                    <h2>Safe-conduct</h2>
+                    <p>Show it in person — or pass it quietly · good for 15 minutes</p>
+                  </div>
+                </header>
+                <div class="invite-body">
+                  <div class="qr" aria-hidden="true">
+                    <div class="qr__grid"></div>
+                  </div>
+                  <div class="invite-body__copy">
+                    <div class="card card--row">
+                      <code>orwell://pass/8f3c…a91e</code>
+                      <button type="button" class="btn btn--soft btn--sm">Copy</button>
+                    </div>
+                    <p class="muted">Waiting for Bob to accept…</p>
+                    <button type="button" class="btn btn--primary" data-go="accept">
+                      Pretend Bob opens it →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 07 Accept -->
+            <div class="screen" data-screen="accept" data-list="empty">
+              <div class="focus-panel focus-panel--form">
+                <p class="kicker">On Bob’s desk</p>
+                <h2 class="display display--sm">Someone wants a letter line</h2>
+                <div class="card">
+                  <p class="card__label">From</p>
+                  <p class="card__title">Comrade A</p>
+                  <p class="mono">Seal · ORW-7F3A · 9C21</p>
+                  <p class="card__hint">
+                    Check the seal with them in real life. This pass burns after one use.
+                  </p>
+                </div>
+                <ul class="bullets">
+                  <li>Only the two of you will read what follows</li>
+                  <li>No phone book in the middle</li>
+                  <li>The safe-conduct expires once used</li>
+                </ul>
+                <div class="actions">
+                  <button type="button" class="btn btn--primary" data-go="chat">Accept</button>
+                  <button type="button" class="btn btn--ghost" data-go="inbox">Refuse</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 08 Chat -->
+            <div class="screen" data-screen="chat" data-list="chat">
+              <div class="chat-frame">
+                <header class="chat-frame__head">
+                  <div>
+                    <h2>Comrade A</h2>
+                    <p>Burn after reading · 24h · <span class="accent">3/15</span></p>
+                  </div>
+                  <div class="chat-frame__tools">
+                    <span class="badge">Sealed</span>
+                    <button type="button" class="text-btn" data-go="dms">Panic burn</button>
+                  </div>
+                </header>
+                <div class="chat-frame__banner">
+                  Sealed letters — only the two of you can read them
+                </div>
+                <div class="chat-frame__thread">
+                  <div class="msg msg--in">
+                    <p>The line is open. Speak freely.</p>
+                    <time>14:02 · read · burns in 23h</time>
+                  </div>
+                  <div class="msg msg--out">
+                    <p>Understood. Keep it short. Keep it quiet.</p>
+                    <time>14:03 · sent</time>
+                  </div>
+                  <div class="msg msg--in">
+                    <p>If they knock: Dead man’s switch. Don’t wait for a warning light.</p>
+                    <time>14:04 · read · burns in 23h</time>
+                  </div>
+                </div>
+                <footer class="composer">
+                  <button type="button" class="icon-btn" title="Attach" disabled>+</button>
+                  <input type="text" value="Type a letter…" readonly />
+                  <button type="button" class="btn btn--primary btn--sm" data-go="ephemeral">
+                    Send
+                  </button>
+                </footer>
+              </div>
+            </div>
+
+            <!-- 09 Ephemeral -->
+            <div class="screen" data-screen="ephemeral" data-list="chat">
+              <div class="chat-frame">
+                <header class="chat-frame__head">
+                  <div>
+                    <h2>Comrade A</h2>
+                    <p class="warn">Burn limit reached — both desks clear</p>
+                  </div>
+                  <span class="badge badge--warn">15/15</span>
+                </header>
+                <div class="chat-frame__thread is-purging">
+                  <div class="msg msg--ghost">Letter burned</div>
+                  <div class="msg msg--ghost">Letter burned</div>
+                  <div class="msg msg--ghost">Letter burned</div>
+                  <div class="toast">
+                    <strong>Ash only</strong>
+                    <span>Those letters are gone from both desks.</span>
+                  </div>
+                </div>
+                <footer class="composer">
+                  <button type="button" class="btn btn--primary" data-go="dms">
+                    Try Dead man’s switch →
+                  </button>
+                </footer>
+              </div>
+            </div>
+
+            <!-- 10 DMS -->
+            <div class="screen" data-screen="dms" data-list="chat">
+              <div class="dms">
+                <p class="kicker kicker--light">Ctrl ×2</p>
+                <h2 class="display">Dead man’s switch</h2>
+                <p class="lede lede--light">
+                  Burns this desk. It cannot unsay what someone already copied by hand.
+                </p>
+                <button type="button" class="dms__btn" data-go="wiped">
+                  Burn the desk now
+                </button>
+                <p class="muted muted--light">Confirm with <kbd>Enter</kbd> ×2</p>
+                <button type="button" class="btn btn--ghost-light" data-go="chat">Cancel</button>
+              </div>
+            </div>
+
+            <!-- 11 Wiped -->
+            <div class="screen" data-screen="wiped" data-list="empty">
+              <div class="focus-panel">
+                <p class="badge">Cover intact</p>
+                <h2 class="display display--sm">We’ve got you.</h2>
+                <p class="lede">
+                  Big Brother came looking.<br />
+                  Your letters and papers on this desk: ash.
+                </p>
+                <div class="card">
+                  <strong>Cover story is showing</strong>
+                  <p>This machine now looks like a quiet, empty desk.</p>
+                </div>
+                <div class="actions">
+                  <button type="button" class="btn btn--primary" data-go="square">
+                    Public Square ↗
+                  </button>
+                  <button type="button" class="btn btn--ghost" data-go="splash">Start over</button>
+                </div>
+              </div>
+            </div>
           </section>
+        </div>
+
+        <!-- PUBLIC SQUARE = WEB -->
+        <div class="browser" id="web" hidden>
+          <div class="browser__chrome">
+            <div class="browser__traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="browser__url">square.orwell.project</div>
+            <button type="button" class="btn btn--soft btn--sm" data-go="inbox">
+              ← Courier app
+            </button>
+          </div>
+          <div class="browser__page">
+            <header class="web-header">
+              <img src="../assets/brand/logo-main-blue.png" alt="Orwell Project" />
+              <nav>
+                <span class="is-active">Feed</span>
+                <span>Kinotek</span>
+                <span>Docs</span>
+              </nav>
+              <button type="button" class="btn btn--primary btn--sm" data-go="invite">
+                Open Courier
+              </button>
+            </header>
+            <div class="web-grid">
+              <aside>
+                <h2>Feeds</h2>
+                <button type="button" class="thread is-active">
+                  <strong>Main</strong>
+                  <small>Speech · short takes</small>
+                </button>
+                <button type="button" class="thread">
+                  <strong>Kinotek</strong>
+                  <small>Video</small>
+                </button>
+                <p class="aside-note">The Square is for speaking aloud. Private letters stay in Courier.</p>
+              </aside>
+              <div class="feed">
+                <article class="post">
+                  <header>
+                    <strong>@signal.break</strong>
+                    <time>2h</time>
+                  </header>
+                  <p>The Ministry of Truth just “clarified” the rules. Again.</p>
+                  <footer>
+                    <span>84</span>
+                    <button type="button" class="text-btn" data-go="invite">Write in Courier</button>
+                  </footer>
+                </article>
+                <article class="post">
+                  <div class="thumb">Newsreel #14 — how to hand a safe-conduct</div>
+                  <header>
+                    <strong>@kinotek</strong>
+                    <time>5h</time>
+                  </header>
+                  <p>Pictures and film for those who still look.</p>
+                </article>
+                <article class="post">
+                  <header>
+                    <strong>@no.chains</strong>
+                    <time>1d</time>
+                  </header>
+                  <p>Don’t put your real name in a letter. Ever.</p>
+                </article>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+
+    <!-- Thread list templates (cloned into col-list by JS) -->
+    <template id="list-empty">
+      <div class="list-empty">
+        <p>No letters</p>
+        <small>Safe-conducts only — no phone book</small>
+      </div>
+    </template>
+    <template id="list-invite">
+      <button type="button" class="thread is-active">
+        <span class="avatar">+</span>
+        <span>
+          <strong>New safe-conduct</strong>
+          <small>Once only · 15 min</small>
+        </span>
+      </button>
+    </template>
+    <template id="list-chat">
+      <button type="button" class="thread is-active">
+        <span class="avatar">A</span>
+        <span>
+          <strong>Comrade A</strong>
+          <small>Burns · 3/15</small>
+        </span>
+      </button>
+      <button type="button" class="thread">
+        <span class="avatar">B</span>
+        <span>
+          <strong>Comrade B</strong>
+          <small>No recent letters</small>
+        </span>
+      </button>
+    </template>
 
     <script src="parcours.js"></script>
   </body>

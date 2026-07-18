@@ -54,14 +54,42 @@ Ordre de construction :
 
 Socle partagé (conceptuel) : Orwell ID · Transport · Vault · Seal (crypto/formats).
 
-Produit global imaginé : **site intégré** (tribune + vidéo + DM) **+** app Courrier à part entière.
+## Surfaces produit (séparées)
+
+| Surface | Forme | Contenu |
+|---------|--------|---------|
+| **Courier** | App bureau (Tauri → `.exe`) | Messagerie privée only |
+| **Public Square** | Site web (navigateur) | Fil type X, opinions |
+| **Kinotek** | Site web (même propriété / sous-route) | Vidéo |
+
+Lien entre les deux : depuis le web, CTA *Message in Courier* (deep link / protocole `orwell://`).  
+Pas de fil social embarqué dans l’app messagerie.
+
+Habitude utilisateur cible (alignée usage courant) : social/vidéo dans le **navigateur** ; messagerie en **app bureau**.
+
+## Plateforme (web-first → installable)
+
+| Étape | Choix |
+|-------|--------|
+| 1 | UI web d’abord (mockups desktop pour Courier ; pages web pour Square) |
+| 2 | Wrapper **Tauri** pour Courier uniquement |
+| Pourquoi Tauri | Plus léger qu’Electron, surface d’attaque moindre |
+| Mobile | Plus tard |
+
+```text
+Public Square / Kinotek  →  browser
+Courier UI               →  browser (dev) → Tauri (.exe)
+```
 
 ## UX / branding
 
-- Esthétique : propagande totalitaire détournée, marine `#0C2348` / sable `#E6D7A8`
+- Esthétique : **propagande soviétique × sauce européenne** — tokens Figma dans [`DESIGN_TOKENS.md`](DESIGN_TOKENS.md) (`#103463` / `#E7C178`, Anton + Roboto Medium)
 - Ton : humour qui dédramatise
-- Landing hero + mockup parcours : `index.html`, `mockups/parcours.html`
-- Phrase de récupération : nécessaire sans serveur ; à humaniser (*passeport* / rituel), pas à supprimer
+- **UI language: English (native)**; French OK for internal docs / chat
+- **Voice:** Cold War / 1950s, plain English — see [`VOICE.md`](VOICE.md)
+- Product lexicon: **Courier**, **Letters**, **Papers**, **Passport**, **Safe-conduct**, **Burn after reading**, **Dead man’s switch**, **Cover story**, **Public Square**, **Kinotek**
+- Landing + desktop journey mockup: `index.html`, `mockups/parcours.html`
+- Recovery phrase: required without a server; framed as *passport*
 
 ## Hors scope (pour l’instant)
 

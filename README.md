@@ -12,6 +12,7 @@
   <a href="#for-builders">For builders</a> ·
   <a href="#status">Status</a> ·
   <a href="docs/BRAINSTORM.md">Design memory</a> ·
+  <a href="docs/DESIGN_TOKENS.md">Design tokens</a> ·
   <a href="mockups/parcours.html">UX mockup</a>
 </p>
 

@@ -26,9 +26,9 @@ Les noms ci-dessous correspondent aux chemins attendus par le `README.md` racine
 
 ## Brief créa (aligné branding)
 
-- Palette : marine `#0C2348`, sable `#E6D7A8`, crème `#EBE1C4`
+- Palette : **European Blue** `#103463`, **European Yellow** `#E7C178`
 - Ton : propagande totalitaire **détournée**, grain d’affiche, humour sec
-- Typo display : condensée bold (style Bebas / Impact)
+- Typo : Anton (H1 / boutons), Roboto Medium (texte) — voir `docs/DESIGN_TOKENS.md`
 - Pas de purple glow, pas de UI “startup SaaS”
 - Bannière : brand **ORWELL PROJECT** bien visible + une punchline (*Freedom is not optional* ou *No servers. No masters. No chains.*)
 - Infographies : fond sable/crème ou marine, pictos simples, peu de texte, lisibles en petit dans le README
